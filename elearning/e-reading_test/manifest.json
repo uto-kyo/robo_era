@@ -1,0 +1,37 @@
+{
+    "manifest_version": 3,
+    "name": "e-reading",
+    "version": "8.0",
+    "description": "各モードに応じて解答プロセスを自動化します。",
+    "permissions": [
+        "storage",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://supereigo.campus.kit.ac.jp/*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "手動で解答を適用"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://supereigo.campus.kit.ac.jp/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "injector.js"
+            ],
+            "matches": [
+                "https://supereigo.campus.kit.ac.jp/*"
+            ]
+        }
+    ]
+}
