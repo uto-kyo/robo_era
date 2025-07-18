@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "elearning",
+    "version": "0.3.1",
+    "icons": {
+        "128": "icon.png"
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "update_url": "https://chipper-kheer-ff3505.netlify.app/updates.json",
+            "strict_min_version": "57.0"
+        }
+    },
+    "permissions": [
+        "https://supereigo.campus.kit.ac.jp/*",
+        "webRequest",
+        "webRequestBlocking",
+        "tabs"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://supereigo.campus.kit.ac.jp/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_start"
+        }
+    ]
+}
